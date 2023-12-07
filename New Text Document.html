@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+  <script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: url('https://imgur.com/Cv3rlLF.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    #heart-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background-image: url('https://imgur.com/Cv3rlLF');
+      background-size: cover;
+      animation: heartAnimation 5s infinite linear;
+    }
+.balloon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  animation: balloonAnimation 4s infinite ease-in-out;
+}
+
+    #content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    #balloons {
+      position: relative;
+      z-index: 1;
+    }
+
+    #text {
+      font-family: 'Pacifico', cursive;
+      font-size: 36px;
+      color: #ffffff; /* White */
+      margin-top: 20px;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <div id="heart-container">
+    <div class="heart"></div>
+  </div>
+
+  <div id="content">
+    <div id="balloons">
+      <img class="balloon" src="https://imgur.com/NfSuBjz.jpg" alt="Balloon">
+    </div>
+    <div id="text">Happy Birthday mage patiyoo...</div>
+  </div>
+
+  <script>
+    gsap.to('.balloon', {
+      y: -20,
+      yoyo: true,
+      repeat: -1,
+      duration: 2,
+      ease: 'power1.inOut',
+    });
+
+    gsap.to('.heart', {
+      rotation: 360,
+      repeat: -1,
+      duration: 5,
+      ease: 'linear',
+    });
+  </script>
+</body>
+</html>
